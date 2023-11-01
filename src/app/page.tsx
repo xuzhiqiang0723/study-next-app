@@ -1,5 +1,5 @@
+import { Links } from '@/components/links'
 import { Metadata } from 'next'
-import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Next.js'
@@ -7,5 +7,9 @@ export const metadata: Metadata = {
 
 // `app/page.tsx` is the UI for the `/` URL
 export default function Page() {
-  return <Link href="/dashboard">Dashboard</Link>
+  return (
+    <>
+      <Links linkList={['dashboard', 'settings']} />
+    </>
+  )
 }
