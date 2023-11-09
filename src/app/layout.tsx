@@ -16,7 +16,7 @@ export default function RootLayout({
   modal: React.ReactNode
 }) {
   const allSegments = useSelectedLayoutSegments()
-  console.log('allSegments', allSegments)
+  // console.log('allSegments', allSegments)
   return (
     <html lang="en">
       <body>

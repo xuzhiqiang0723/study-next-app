@@ -1,5 +1,5 @@
 import { getSortedPostsData } from '@/lib/posts'
-import utilStyles from '../../styles/utils.module.css'
+import utilStyles from '@/assets/styles/utils.module.css'
 import Link from 'next/link'
 export default async function Page() {
   // 获取按日期排序好的博客大纲

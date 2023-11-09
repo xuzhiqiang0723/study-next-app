@@ -1,10 +1,12 @@
 import Head from 'next/head'
 import { getAllPostIds, getPostData } from '../../../lib/posts'
-import utilStyles from '../../../styles/utils.module.css'
+import utilStyles from '@/assets/styles/utils.module.css'
 import Link from 'next/link'
 
 // params中的属性对应文件夹[id]
 type pathProps = [{ params: { id: string } }]
+// generateStaticParams函数可以与动态路由段结合使用，以便在构建时静态生成路由，而不是在请求时按需生成路由。
+// 若是无generateStaticParams函数不影响动态路由使用
 // 静态生成的params参数数组，用于构建动态路由
 export async function generateStaticParams() {
   const paths = (await getAllPostIds()) as pathProps
@@ -21,7 +23,8 @@ type pageParams = {
   searchParams: {}
 }
 // 页面(默认导出)，根据对应的动态路由渲染页面
-export default async function Page({ params }: pageParams) {
+export default async function Page({ params, searchParams }: pageParams) {
+  console.log(2)
   const postData: any = await getPostData(params.id)
   return (
     <>
